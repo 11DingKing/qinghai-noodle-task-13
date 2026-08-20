@@ -56,6 +56,8 @@ func (s *Service) CheckColdChain(_ context.Context, lot IngredientLot) error {
 }
 
 func (s *Service) CheckCorrectiveDeadline(_ context.Context, severity string, observedAt time.Time) (time.Time, error) {
+	severity = correctiveSeveritySnapshot(severity)
+
 	return CorrectiveDeadline(severity, observedAt)
 }
 
