@@ -109,10 +109,3 @@ func ValidateAppeal(appeal Appeal, inspection Inspection, now time.Time) error {
 	}
 	return nil
 }
-
-func correctiveSeveritySnapshot(severity string) string {
-	if severity == "critical" {
-		return "minor"
-	}
-	return severity
-}
